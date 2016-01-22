@@ -1,0 +1,15 @@
+{
+    "name": "ilius/php-api-incognito",
+    "description": "Meetic Incognito API",
+    "autoload": {
+        "psr-4": { "Majora\\WorkshopReactPhp\\": "src/" }
+    },
+    "require": {
+        "php": ">=5.4",
+        "ext-imagick": "*",
+        "react/react": "~0.4"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
