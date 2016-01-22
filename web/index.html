@@ -10,7 +10,7 @@
     <body>
         <div class="container">
             <h1>ReactPhp Workshop</h1>
-            <form id="fileForm" method="post" action="upload.php" enctype='multipart/form-data'>
+            <form id="fileForm" method="post" action="app.php" enctype='multipart/form-data'>
                 <div class="form-group">
                     <label for="fileInput">Image</label>
                     <input type="file" name="fileInput" id="fileInput" required="true">
@@ -21,26 +21,26 @@
 
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script>
-            var fileSubmit = $('#fileSubmit');
-            var fileForm = $('#fileForm');
-            fileForm
-                .submit( function( e ) {
-                    $.ajax( {
-                        url: fileForm.attr('action'),
-                        method: fileForm.attr('method'),
-                        data: new FormData( this ),
-                        processData: false,
-                        contentType: false,
-                        success: function(data, textStatus, jqXHR)
-                        {
-                            console.log(data);
-                            fileSubmit.attr('class', 'btn btn-success');
-                        }
-                    } );
+        <!--<script>-->
+            <!--var fileSubmit = $('#fileSubmit');-->
+            <!--var fileForm = $('#fileForm');-->
+            <!--fileForm-->
+                <!--.submit( function( e ) {-->
+                    <!--$.ajax( {-->
+                        <!--url: fileForm.attr('action'),-->
+                        <!--method: fileForm.attr('method'),-->
+                        <!--data: new FormData( this ),-->
+                        <!--processData: false,-->
+                        <!--contentType: false,-->
+                        <!--success: function(data, textStatus, jqXHR)-->
+                        <!--{-->
+                            <!--console.log(data);-->
+                            <!--fileSubmit.attr('class', 'btn btn-success');-->
+                        <!--}-->
+                    <!--} );-->
 
-                    e.preventDefault();
-                } );
-        </script>
+                    <!--e.preventDefault();-->
+                <!--} );-->
+        <!--</script>-->
     </body>
 </html>
