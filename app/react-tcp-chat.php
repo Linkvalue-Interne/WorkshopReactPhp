@@ -18,6 +18,9 @@ $socket->on('connection', function (Connection $client) use ($clients) {
     printf("Client connected: %s (new total: %d)\n", $client->getRemoteAddress(), count($clients));
 
     $client->on('data', function ($data) use ($clients, $client) {
+        if (($data = trim($data)) === '') {
+            return;
+        }
         printf("[%s] Server received: %s\n", date('H:i:s'), $data);
 
         foreach ($clients as $current) {
@@ -25,8 +28,7 @@ $socket->on('connection', function (Connection $client) use ($clients) {
                 continue;
             }
 
-            $current->write($client->getRemoteAddress().': ');
-            $current->write($data);
+            $current->write(sprintf("%s: %s\n", $client->getRemoteAddress(), $data));
         }
     });
 

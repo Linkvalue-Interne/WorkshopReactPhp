@@ -20,7 +20,7 @@ while (true) {
     $writes = $excepts = [];
 
     if (stream_select($reads, $writes, $excepts, 1, 0) === false) {
-        //timeout
+        echo "Timeout !\n";
     }
 
     foreach ($reads as $read) {
